@@ -1,0 +1,9 @@
+Copy contents of /apps/buildSCripts to /tmp directory of server being built
+
+Once server is imaged (and if RHEL updated to 6.5. While you have the ISO mounted do a yum install of KSH and sendmail) unmount any mounted drives and cd to /tmp 
+If possible, assure that a repo is functional, though this is not copmletely necessary.
+Run Autoconfig_postbuild.sh and follow the steps and prompts. It is best to reboot at the end of the first run if no errors were encountered. 
+Once rebooted cd to /tmp and run Autoconfig_Validate.sh
+Again follow the prompts and reboot if desired. You should recieve and email with the validation output, but a copy of the file is also placed in /tmp under the name of Postbuild.log for you to check.
+
+This will set the server up for a normal App server. Any DB servers will need all additional steps (veritas, storage, etc. etc.)
